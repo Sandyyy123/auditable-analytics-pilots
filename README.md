@@ -42,3 +42,13 @@ The dashboard example reconciles paid totals, refuses mixed currencies and
 duplicate IDs, and reports missing statuses. Its narrative is deterministic;
 it must not be described as AI-generated. Any later LLM summarizer needs
 source-grounded numeric checks and a deterministic fallback.
+
+## Point-in-time review example
+
+`python temporal_review.py` demonstrates a synthetic webpage observation that was
+corrected after a prediction date. The historical feature uses only observations
+available by that date; a retrospective corrected view is reported separately.
+`test_temporal_review.py` checks future leakage, late corrections, timestamp and
+identity boundaries, duplicate records, unknown entities and conflicting values.
+No client data or historical client outcomes appear in this example. It does not
+fit a model, establish causality, implement deletion semantics or connect to GCP.
